@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'esirom.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'esirom',
-        'USER': 'postgres',
-        'PASSWORD': 'jackinthebox@1',
-        'HOST': '',
+        # 'NAME': 'esirom',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'jackinthebox@1',
+        # 'HOST': '',
     }
 }
 
