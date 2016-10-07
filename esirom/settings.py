@@ -14,7 +14,6 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +25,7 @@ SECRET_KEY = ')x%@66ny0s+8+j&8a_1w4r$%2v802rqd@a)3u-%(z-^+#f5!n7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [https://esiromads.herokuapp.com]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -72,16 +71,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'esirom.wsgi.application'
 
 
-# Database
+# Databases
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'esirom',
-        'USER': 'postgres',
-        'PASSWORD': 'jackinthebox@1',
-        'HOST': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -110,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Jamaica'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -119,8 +115,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join((BASE_DIR), 'staticfiles')
-STATIC_URL = '/static/')
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
+
+STATIC_URL = '/static/'
