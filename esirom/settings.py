@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'ads.apps.AdsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -123,3 +124,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.sep.join([os.path.dirname(os.path.dirname(__file__)), 'static']),
 )
+
+# REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ),
+}
