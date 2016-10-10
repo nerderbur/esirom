@@ -11,5 +11,3 @@ class ListBrand(generics.ListAPIView):
 class ListAds(generics.ListAPIView):
     queryset = models.PurchasedAd.objects.all()
     serializer_class = serializers.PurchasedAdSerializer
-
-
