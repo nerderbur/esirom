@@ -18,10 +18,10 @@ class ListSearchedAds(generics.ListAPIView):
 
     def get_queryset(self):
         brand = self.kwargs['brand_pk']
-        fromDate = self.kwargs['from_date']
-        toDate = self.kwargs['to_date']
+        from_date = self.kwargs['from_date']
+        to_date = self.kwargs['to_date']
 
-        return models.PurchasedAd.objects.filter(brand=brand, ad_date__range=(fromDate, toDate))
+        return models.PurchasedAd.objects.filter(brand=brand, ad_date__range=(from_date, to_date))
 
 
 class ListSpecificAd(generics.ListAPIView):
