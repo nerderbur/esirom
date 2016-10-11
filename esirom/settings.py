@@ -59,7 +59,7 @@ ROOT_URLCONF = 'esirom.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,4 +140,10 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:63342',
+    'localhost',
+    'localhost:80',
+    '104.236.70.152',
+    '10.132.51.244',
+    '104.236.70.152:80',
+    '10.132.51.244:80',
 )
